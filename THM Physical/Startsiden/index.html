@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THM Physical</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="layout.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stilark1.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="icon" 
+        type="image/png" 
+        href="../Bilder (til alle sider)/logo.png">
+    </head>
+<body>
+
+
+<div id="wrapper">
+    
+<header class="header" id="tekstheader">
+  <div id="header_header">
+    <div id="textLOL">
+      <h1>THM Physical</h1>
+    </div>
+    <div id="meny_lukket">
+      <a href="#meny_aapen" id="menu_btn"><img src="https://image.flaticon.com/icons/png/512/56/56763.png" width="32px" heigth="32px" id="hamb-ico"></a>
+    </div> 
+  </div>
+
+<nav id="menyen">
+          
+    <div id="meny_aapen">
+        <a href="#meny_lukket" id="menu_btn2"><img src="https://githubme.xtgem.com/Data/Closed1.png" width="32px" height="32px" id="cross"></a>
+          
+        <ul id="nav-bar">
+            <li id="home"><a href="index.html">
+                <img src="../Bilder (til alle sider)/hjem.png" width="32px" height="32px"><br>Home
+            </a></li>
+            <li id="shop"><a href="../Shop/shop.html"><img src="../Bilder (til alle sider)/shop.png" width="32px" height="32px"><br>Shop</a></li>
+            <li id="social"><a href="../Social/social.html"><img src="../Bilder (til alle sider)/social.png" width="32px" height="32px"><br>Social</a></li>
+            <li id="news"><a href="../News/news.html"><img src="../Bilder (til alle sider)/news.png" width="32px" height="32px"><br>News</a></li>
+            <li id="contact"><a href="../Contact/contact.html"><img src="../Bilder (til alle sider)/contact.png" width="32px" height="32px"><br>Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/thm.png" style="width:100%">
+      <div class="numbertext">1 / 6</div>
+    </div>
+  
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/skinnyboi.jpg" style="width:100%">
+      <div class="numbertext">2 / 6</div>
+    </div>
+  
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/bodymachine.png" style="width:100%">
+      <div class="numbertext">3 / 6</div>
+    </div>
+      
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/SuperSoilder.jpg" style="width:100%">
+      <div class="numbertext">4 / 6</div>
+    </div>
+  
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/sixPack.jpg" style="width:100%">
+      <div class="numbertext">5 / 6</div>
+    </div>
+      
+    <div class="mySlides">
+      <img src="../Bilder (til alle sider)/fitCaptain.png" style="width:100%">
+      <div class="numbertext">6 / 6</div>
+    </div>
+      
+    <div class="btns">
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <p id="caption"></p>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+  
+    
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/thm.png" style="width:100%" onclick="currentSlide(1)" alt="THM">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/skinnyboi.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pre Body Machine">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/bodymachine.png" style="width:100%" onclick="currentSlide(3)" alt="Full Body Machine">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/SuperSoilder.jpg" style="width:100%" onclick="currentSlide(4)" alt="Post Body Machine">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/sixPack.jpg" style="width:100%" onclick="currentSlide(5)" alt="You'll get the body you want!">
+      </div>    
+      <div class="column">
+        <img class="demo cursor" src="../Bilder (til alle sider)/fitCaptain.png" style="width:100%" onclick="currentSlide(6)" alt="Live the rest of your life in joy">
+      </div>
+    </div>
+</div>
+  
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
+  window.addEventListener("resize", function() {
+    var width = window.innerWidth;
+    if(width >= 1024) {
+        navbar.style.flexDirection = "row";
+        navbar.style.display = "flex";
+        btn.style.display = "none";
+    } else {
+        btn.style.display = "block";
+        navbar.style.display = "none";
+    }
+  });
+
+  var btn = document.getElementById("hamb-ico");
+  var navbar = document.getElementById("nav-bar");
+  var cross = document.getElementById("cross");
+
+  btn.addEventListener("click", function() {
+      checkClick();
+  });
+
+  cross.addEventListener("click", function() {
+      checkClick();
+  });
+
+  function checkClick() {
+      if(btn.style.display == "none") {
+          btn.style.display = "block";
+          navbar.style.display = "none";
+          cross.style.display = "none";
+      } else {
+          btn.style.display = "none";
+          navbar.style.display = "block";
+          cross.style.display = "block";
+      }
+  }
+
+</script>
+</header>
+<main class="main">
+    <article>
+        <h2 class="articleheader">History</h2>
+        <p class="articles">This idea was the start of a generation. Three enthusiastic boys from Aalesund, Norway made this idea come true. The work was hard and the road was long. These young gentlemen didn't give up their dream even if they met hard times.</p>
+    </article>
+    <article>
+        <h2 class="articleheader">Impact and legacy</h2>
+        <p class="articles">The THM Full Body Training Machine is a high tech fitness product that will take the world by storm. It will be a product that everyone wants and needs.</p>
+    </article>
+    <article>
+        <h2 class="articleheader">Information</h2>
+        <p class="articles">CEO: Henrik Gammelsaether, COO: Titas Zakys, CFO: Musie Gebrehiwet Enbaye</p>
+    </article>
+</main>
+</div>
+</body>
+</html>
